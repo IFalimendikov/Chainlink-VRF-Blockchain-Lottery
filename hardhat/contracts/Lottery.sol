@@ -50,7 +50,7 @@ contract Lottery is VRFConsumerBase, Ownable {
     */
     function startGame(uint8 _maxPlayers, uint256 _entryFee) public onlyOwner {
         // Check if there is a game already running
-        require(!gameStarted, "Game is currently running");
+        require(!gameStarted, "Game is currently running!");
         // empty the players array
         delete players;
         // set the max players for this game
