@@ -15,7 +15,7 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      ethGoerli: GOERLI_KEY,
+      goerli: GOERLI_KEY,
     },
   },
 };
