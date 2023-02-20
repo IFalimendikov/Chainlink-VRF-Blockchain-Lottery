@@ -1,0 +1,8 @@
+{
+  "goerli": {
+    "Lottery.sol": {
+      "address": "0xDda433327e003B481273A36408D633a2a1C501c2",
+      "startBlock": 8496810
+    }
+  }
+}

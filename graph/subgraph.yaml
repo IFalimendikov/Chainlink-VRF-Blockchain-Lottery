@@ -1,0 +1,33 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Lottery.sol
+    network: goerli
+    source:
+      address: "0xDda433327e003B481273A36408D633a2a1C501c2"
+      abi: Lottery.sol
+      startBlock: 8496810
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - GameEnded
+        - GameStarted
+        - OwnershipTransferred
+        - PlayerJoined
+      abis:
+        - name: Lottery.sol
+          file: ./abis/Lottery.sol.json
+      eventHandlers:
+        - event: GameEnded(uint256,address,bytes32)
+          handler: handleGameEnded
+        - event: GameStarted(uint256,uint8,uint256)
+          handler: handleGameStarted
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: PlayerJoined(uint256,address)
+          handler: handlePlayerJoined
+      file: ./src/lottery-sol.ts
